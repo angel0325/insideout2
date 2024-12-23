@@ -33,10 +33,10 @@
 
   .title {
     text-align: right; /* 將文字置中 */
-    padding-left:20px;
+    padding-left:40px;
     transform:translateX(120px);
     display:inline-block;
-    font-size: 24px;    /* 字體大小 */
+    font-size: 40px;    /* 字體大小 */
     font-weight: bold;  /* 粗體 */
     margin: 20px 0;     /* 設置上下間距 */
   }
@@ -129,10 +129,240 @@
   }
   
   .description {
-    font-size: 20px;
-    font-weight: 700;
-    font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center; /* 文字置中對齊 */
+      margin-top: 30px; /* 調整這裡的值來控制向下的距離 */
+      font-size: 35px; /* 可調整字體大小 */
+      line-height: 1.6; /* 行距，讓文字看起來更舒適 */
+      color: #ffffff; /* 字體顏色，根據背景調整 */
+    
+    
   }
-  
+ 
+
+
+
+/* 主要容器設定 */
+.container {
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center; /* 垂直置中 */
+  height: 100vh; /* 設置高度為整個視窗高度 */
+  padding: 0 10%; /* 左右留白 */
+  position: relative;
+}
+
+
+/* 左右文字設定 */
+.letter {
+  font-size: 120px; /* 文字大小 */
+  font-weight: bold; /* 粗體 */
+  white-space: nowrap; /* 防止文字換行 */
+  line-height: 1;
+}
+
+
+.image {
+flex-shrink: 0; /* 防止圖片縮小 */
+text-align: center; /* 圖片置中 */
+}
+
+
+
+
+.image img {
+max-height: 80vh; /* 限制圖片高度 */
+width: auto; /* 保持圖片比例 */
+}
+
+
+
+
+.video-section { /* 換成 video-section */
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+
+
+
+
+/* 標題設置 */
+h2 {
+font-style: italic;
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+.image-container img {
+max-width: 100%; /* 保證圖片在容器中自適應 */
+height: auto;
+display: block;
+margin: 0 auto; /* 讓圖片居中 */
+}
+
+/* 按鈕樣式 */
+.button-container {
+  text-align: center; /* 讓按鈕居中 */
+  margin-top:1px;   /* 與圖片保持間距 */
+}
+
+.button-container button {
+  background-color: #ccc; /* 按鈕背景色 */
+  color: rgb(0, 0, 0);             /* 按鈕文字顏色 */
+  font-size: 16px;          /* 文字大小 */
+  padding: 10px 20px;       /* 按鈕內間距 */
+  border: none;             /* 去掉邊框 */
+  border-radius: 20px;       /* 圓角 */
+  font-weight: bold;
+  cursor: pointer;          /* 鼠標懸浮時顯示手型 */
+  transition: background-color 0.3s ease; /* 背景色變化效果 */
+}
+
+.button-container button:hover {
+  background-color: #f0d850; /* 滑過時的背景色 */
+}
+.year {
+    font-size: 24px;
+}
+
+/* 影片外框 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 導演資訊 */
+.director {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* 加入片單按鈕 */
+.watchlist-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.watchlist-button:hover {
+    background-color: #f0d850; /* 滑鼠懸停顏色 */
+}
+
+.star {
+    margin-right: 10px; /* 星號與文字間距 */
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.more-like-this {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.scroll-container {
+  display: flex;
+  justify-content: center; /* 讓內容置中 */
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+  scrollbar-width: thin; /* 適用於 Firefox */
+  scrollbar-color: #ccc transparent; /* 適用於 Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px; /* 調整滾動條高度 */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* 滾動條的顏色 */
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  width: 150px; /* 根據需要調整卡片寬度 */
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.1); /* 滑鼠懸停時的放大效果 */
+}
+
+
+.follow-us {
+  text-align: center; /* 讓內容居中對齊 */
+  margin-top: 20px; /* 與上方內容的距離 */
+}
+
+.follow-us p {
+  font-size: 16px; /* 調整文字大小 */
+  font-weight: bold; /* 加粗文字 */
+  color: white; /* 根據頁面背景設置文字顏色 */
+}
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.icons span {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icons span:hover {
+  transform: scale(1.2);
+}
+
