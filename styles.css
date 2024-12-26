@@ -45,8 +45,7 @@
     display: flex;
     gap: 20px;
   }
-  
-  .nav-link {
+   .nav-link {
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -55,35 +54,31 @@
     align-items: center;      /* 垂直居中對齊 */
     gap: 10px;
   }
-  
-  .nav-link:hover {
+   .nav-link:hover {
     text-decoration: underline;
   }
-  
-
-.search-container {
+ 
+ 
+ .search-container {
     position: relative;
     width: 300px;
   }
-  
-  #search-box {
-    width: 100%;
+   #search-box {
+    width: 50%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
   }
-  
-  #search-box:focus {
+   #search-box:focus {
     border-color: #555;
   }
-  
-  .dropdown {
+   .dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    width: 50%;
     background: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -92,30 +87,46 @@
     overflow-y: auto;
     z-index: 1000;
   }
-  
-  .dropdown p {
+   .dropdown p {
     margin: 10px;
     padding: 5px;
     cursor: pointer;
   }
-  
-  .dropdown p:hover {
+   .dropdown p:hover {
     background-color: #f0f0f0;
   }
-  
-  .hidden {
+   .hidden {
     display: none;
   }
-  
-  .recent-searches, .trending-searches {
+   .recent-searches, .trending-searches {
     padding: 10px;
   }
-  
-  hr {
+   hr {
     margin: 0;
     border: none;
     border-top: 1px solid #ddd;
   }
+ 
+ 
+ 
+
+/* 在小螢幕下調整排版 */
+@media (max-width: 768px) {
+  .nav {
+      flex-direction: column; /* 將導航欄改為垂直排列 */
+      align-items: flex-start; /* 向左對齊 */
+  }
+
+  .search-container {
+      flex-direction: column; /* Login 和 Search 垂直排列 */
+      width: 100%; /* 占滿寬度 */
+  }
+
+  #search-box {
+      width: 100%; /* 搜尋框寬度隨容器調整 */
+  }
+}
+
   /* Main Content */
   .main-content {
     text-align: center;
@@ -129,7 +140,7 @@
   }
   
   .description {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
       text-align: center; /* 文字置中對齊 */
       margin-top: 30px; /* 調整這裡的值來控制向下的距離 */
       font-size: 35px; /* 可調整字體大小 */
@@ -293,12 +304,14 @@ body {
   color: #fff;
 }
 
+/* 父容器樣式 */
 .more-like-this {
   text-align: center;
   margin: 20px 0;
-}
-
-.scroll-container {
+ }
+ 
+ 
+ .scroll-container {
   display: flex;
   justify-content: center; /* 讓內容置中 */
   overflow-x: auto;
@@ -306,37 +319,44 @@ body {
   padding: 10px 0;
   scrollbar-width: thin; /* 適用於 Firefox */
   scrollbar-color: #ccc transparent; /* 適用於 Firefox */
-}
-
-.scroll-container::-webkit-scrollbar {
+ }
+ 
+ 
+ .scroll-container::-webkit-scrollbar {
   height: 8px; /* 調整滾動條高度 */
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
+ }
+ 
+ 
+ .scroll-container::-webkit-scrollbar-thumb {
   background-color: #ccc; /* 滾動條的顏色 */
   border-radius: 4px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
+ }
+ 
+ 
+ .scroll-container::-webkit-scrollbar-track {
   background-color: transparent;
-}
-
-.movie-card {
+ }
+ 
+ 
+ .movie-card {
   flex: 0 0 auto;
   width: 150px; /* 根據需要調整卡片寬度 */
   text-align: center;
-}
-
-.movie-card img {
+ }
+ 
+ 
+ .movie-card img {
   width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease;
-}
-
-.movie-card img:hover {
+ }
+ 
+ 
+ .movie-card img:hover {
   transform: scale(1.1); /* 滑鼠懸停時的放大效果 */
-}
-
+ }
+ 
+ 
 
 .follow-us {
   text-align: center; /* 讓內容居中對齊 */
@@ -365,4 +385,16 @@ body {
 .icons span:hover {
   transform: scale(1.2);
 }
-
+@media (max-width: 768px) {
+  .search-container input {
+      width: 100%; /* 搜尋框占滿容器寬度 */
+  }
+  .nav {
+      flex-direction: column; /* 將導航欄改為垂直排列 */
+      align-items: flex-start; /* 項目靠左排列 */
+  }
+  .nav .login-container {
+      flex-direction: column; /* Login 和 Search 垂直排列 */
+      width: 100%; /* 占滿容器 */
+  }
+}

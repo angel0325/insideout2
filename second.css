@@ -20,7 +20,21 @@
     align-items: center;
     padding: 20px;
   }
-  
+  .back-button {
+    position: absolute; /* 確保按鈕在 header 中定位 */
+    top: 20px; /* 與頂部的距離 */
+    left: 0; /* 設定為 0，完全貼合左側 */
+    width: 40px; /* 按鈕寬度 */
+    height: 40px; /* 按鈕高度 */
+    cursor: pointer; /* 滑鼠指針變為點擊樣式 */
+    z-index: 10; /* 確保按鈕位於其他元素上方 */
+  }
+   .back-button img {
+    width: 100%; /* 確保箭頭圖片占滿按鈕容器 */
+    height: 100%;
+    object-fit: contain; /* 保持圖片比例 */
+  }
+ 
   .brain-image img {
     width: 250px; /* 大腦圖片大小 */
     height: auto;
